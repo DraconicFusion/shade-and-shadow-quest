@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shade & Shadow | S-Rank Support</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1a1a1d;
+            --text-color: #f1f1f1;
+            --zelda-gold: #c5a059;
+            --fe-blue: #4a6fa5;
+            --heart-red: #bf212f;
+            --border-style: 4px solid var(--zelda-gold);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Cinzel', serif;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 4rem 1rem;
+            background: radial-gradient(circle, #2c2c30 0%, #1a1a1d 100%);
+            border-bottom: var(--border-style);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--zelda-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0px 0px 10px rgba(197, 160, 89, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--fe-blue);
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        /* --- The Counter (Play Time) --- */
+        .counter-box {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--zelda-gold);
+            display: inline-block;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        .timer-label {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        #timer {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .heart-icon {
+            color: var(--heart-red);
+            animation: beat 1.5s infinite;
+            margin: 0 10px;
+        }
+
+        /* --- Photo Gallery --- */
+        .gallery-section {
+            padding: 4rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--fe-blue);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .photo-frame {
+            border: 2px solid var(--zelda-gold);
+            padding: 5px;
+            background: #000;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px var(--zelda-gold);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Quest Log (Milestones) --- */
+        .quest-section {
+            padding: 4rem 1rem;
+            background-color: #222;
+            border-top: var(--border-style);
+        }
+
+        .quest-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .quest-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-left: 4px solid var(--fe-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .quest-check {
+            color: var(--zelda-gold);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .quest-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .quest-desc {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 2rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            #timer { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="subtitle">S-Rank Support Achieved</div>
+        <h1>Shade <span class="heart-icon">♥</span> Shadow</h1>
+        
+        <div class="counter-box">
+            <div class="timer-label">TOTAL PLAY TIME</div>
+            <div id="timer">Loading...</div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2 class="section-title">Character Gallery</h2>
+        <div class="photo-grid">
+            <div class="photo-frame">
+                <img src="shade.jpg" alt="Shade">
+            </div>
+            <div class="photo-frame">
+                <img src="us.jpg" alt="Together">
+            </div>
+            <div class="photo-frame">
+                <img src="shadow.jpg" alt="Shadow">
+            </div>
+        </div>
+    </section>
+
+    <section class="quest-section">
+        <h2 class="section-title">Completed Quests</h2>
+        <ul class="quest-list">
+            <li class="quest-item">
+                <div class="quest-check">⚔️</div>
+                <div>
+                    <div class="quest-name">The First Encounter</div>
+                    <div class="quest-desc">Met and joined parties.</div>
+                </div>
+            </li>
+            <li class="quest-item">
+                <div class="quest-check">🛡️</div>
+                <div>
+                    <div class="quest-name">Dungeon Cleared: First Apartment</div>
+                    <div class="quest-desc">Unlocked shared inventory (Moved in together).</div>
+                </div>
+            </li>
+            <li class="quest-item">
+                <div class="quest-check">🐱‍👤</div>
+                <div>
+                    <div class="quest-name">New Travel Companion Unlocked and Recruited</div>
+                    <div class="quest-desc">New party member Shade has joined the battle!</div>
+                </div>
+            </li>
+            <li class="quest-item">
+                <div class="quest-check">🐎</div>
+                <div>
+                    <div class="quest-name">Fast Travel Unlocked</div>
+                    <div class="quest-desc">First major vacation completed together.</div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        "It's dangerous to go alone! Take this." <br>
+        Built with Love & Code.
+    </footer>
+
+    <script>
+        // ---------------------------------------------------------
+        // CONFIGURATION: CHANGE THE DATE BELOW
+        // Format: "Month Day, Year HH:MM:SS"
+        // ---------------------------------------------------------
+        const relationshipStartDate = "October 25, 2023 00:00:00"; 
+        // Note: 844 days ago from Feb 2026 is roughly Oct 2023. 
+        // Update this to your exact anniversary!
+
+        function updateTimer() {
+            const start = new Date(relationshipStartDate).getTime();
+            const now = new Date().getTime();
+            const distance = now - start;
+
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display result
+            document.getElementById("timer").innerHTML = 
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        // Update the count down every 1 second
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Run immediately on load
+    </script>
+</body>
+</html>
